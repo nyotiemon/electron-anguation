@@ -1,0 +1,19 @@
+{
+  "name": "justwow",
+  "productName": "Electron x Angular",
+  "version": "1.0.0",
+  "description": "electron, angular, d3, equation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nyot",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  },
+  "dependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}

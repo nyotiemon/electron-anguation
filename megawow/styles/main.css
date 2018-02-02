@@ -1,0 +1,28 @@
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.in-a-box {
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  margin: 15px;
+
+  padding: 25px;
+  width: 35em;
+  min-width: 35em;
+  min-height: 20em;
+}
+
+span.error {
+  color:red;
+}
+
+#visualisation{
+  width: 25em;
+  height: 25em;
+}

@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <h1>Task 2-4: Equation Calculator</h1>
+</div>
+
+<form name="myForm">
+<div layout="row" layout-sm="column" layout-xs="column" layout-align="center center">
+  <div flex class="in-a-box">
+    <md-input-container>
+      <label>Variable A</label>
+      <input name="valA" ng-model-options="{ allowInvalid: true }" ng-model="valA" ng-pattern='thePattern' placeholder="Please input value a" ng-keyup="getA()" >
+      <div ng-messages="myForm.valA.$error" >
+         <div ng-message="pattern" >**** {{myForm.valA.$viewValue}} is not a valid input of A.</div>
+      </div>
+    </md-input-container>
+    </br>
+    <md-input-container>
+      <label>Variable B</label>
+      <input name="valB" ng-model-options="{ allowInvalid: true }" ng-model="valB" ng-pattern='thePattern' placeholder="Please input value b" ng-keyup="getB()" >
+      <div ng-messages="myForm.valB.$error" >
+         <div ng-message="pattern" >**** {{myForm.valB.$viewValue}} is not a valid input of B.</div>
+      </div>
+    </md-input-container>
+    </br>
+    <md-input-container>
+      <label>Variable C</label>
+      <input name="valC" ng-model-options="{ allowInvalid: true }" ng-model="valC" ng-pattern='thePattern' placeholder="Please input value c" ng-keyup="getC()" >
+      <div ng-messages="myForm.valC.$error" >
+         <div ng-message="pattern" >**** {{myForm.valC.$viewValue}} is not a valid input of C.</div>
+      </div>
+    </md-input-container>
+  </div>
+
+  <div flex class="in-a-box">
+    <div layout="row" layout-align="center none">
+      <span>The result of <result>{{result}}</result></span>
+    </div>
+    <div layout="row" layout-align="center none">
+      <span><svg id="visualisation" ></svg></span>
+    </div>
+  </div>
+</div>
+</form>
