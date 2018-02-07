@@ -1,7 +1,7 @@
 const path = require('path')
 const url = require('url')
 const electron = require('electron')
-const autoUpdater = require('./main-process/auto-updater')
+const appUpdater = require('./main-process/auto-updater')
 const appMenu = require('./main-process/application-menu')
 
 // Module to control application life.
@@ -46,10 +46,10 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
   appMenu.MenuReady();
-  autoUpdater.updateMenu()
+  appUpdater.updateMenu()
 
   createWindow()
-  autoUpdater.initialize()
+  appUpdater.initialize()
 });
 
 // Quit when all windows are closed.

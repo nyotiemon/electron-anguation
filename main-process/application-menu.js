@@ -123,7 +123,7 @@ let template = [{
   submenu: [{
     label: 'Learn More',
     click: function () {
-      electron.shell.openExternal('http://electron.atom.io')
+      electron.shell.openExternal('https://github.com/nyotiemon/electron-anguation')
     }
   }]
 }]

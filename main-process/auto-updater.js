@@ -31,9 +31,16 @@ exports.initialize = function () {
     exports.updateMenu()
   })
 
+  autoUpdater.on('download-progress', function () {
+    console.log('downloading-update')
+    exports.updateMenu()
+  })
+
   autoUpdater.on('update-downloaded', function () {
     state = 'installed'
     console.log('update-downloaded')
+    exports.updateMenu()
+
     const dialogOpts = {
       type: 'info',
       buttons: ['Restart', 'Later'],
@@ -45,7 +52,6 @@ exports.initialize = function () {
     dialog.showMessageBox(dialogOpts, (response) => {
       if (response === 0) autoUpdater.quitAndInstall()
     })
-    exports.updateMenu()
   })
 
   autoUpdater.checkForUpdates()
