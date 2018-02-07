@@ -1,7 +1,7 @@
 {
   "name": "justwow",
   "productName": "Electron x Angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "electron, angular, d3, equation",
   "private": true,
   "main": "main.js",
@@ -18,8 +18,10 @@
     "electron-builder": "^19.56.0",
     "electron-packager": "^10.1.2",
     "electron-prebuilt": "^1.4.13",
-    "electron-updater": "^2.20.1",
     "electron-winstaller": "^2.6.4"
+  },
+  "dependencies": {
+    "electron-updater": "^2.20.1"
   },
   "standard": {
     "env": {
