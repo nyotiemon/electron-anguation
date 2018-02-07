@@ -7,10 +7,12 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build"
+    "build": "build --win",
+    "ship": "build --win -p always"
   },
   "author": "nyot <nyoto.arif@ardomusnet.com>",
   "license": "ISC",
+  "repository": "https://github.com/nyotiemon/electron-anguation",
   "devDependencies": {
     "electron": "~1.7.8",
     "electron-builder": "^19.56.0",
@@ -29,6 +31,13 @@
     "win": {
       "target": "NSIS",
       "icon": "build/icon.ico"
+    },
+    "mac": {
+      "category": "nyotie.electron.anguation",
+      "target": [
+        "zip",
+        "dmg"
+      ]
     }
   }
 }
