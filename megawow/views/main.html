@@ -7,7 +7,7 @@
   <div flex class="in-a-box">
     <md-input-container>
       <label>Variable A</label>
-      <input name="valA" ng-model-options="{ allowInvalid: true }" ng-model="valA" ng-pattern='thePattern' placeholder="Please input value a" ng-keyup="getA()" >
+      <input name="valA" ng-model-options="{ allowInvalid: true , debounce: 1000 }" ng-model="valA" ng-pattern='thePattern' placeholder="Please input value a" ng-keyup="getA()" >
       <div ng-messages="myForm.valA.$error" >
          <div ng-message="pattern" >**** {{myForm.valA.$viewValue}} is not a valid input of A.</div>
       </div>
@@ -15,7 +15,7 @@
     </br>
     <md-input-container>
       <label>Variable B</label>
-      <input name="valB" ng-model-options="{ allowInvalid: true }" ng-model="valB" ng-pattern='thePattern' placeholder="Please input value b" ng-keyup="getB()" >
+      <input name="valB" ng-model-options="{ allowInvalid: true , debounce: 1000 }" ng-model="valB" ng-pattern='thePattern' placeholder="Please input value b" ng-keyup="getB()" >
       <div ng-messages="myForm.valB.$error" >
          <div ng-message="pattern" >**** {{myForm.valB.$viewValue}} is not a valid input of B.</div>
       </div>
@@ -23,7 +23,7 @@
     </br>
     <md-input-container>
       <label>Variable C</label>
-      <input name="valC" ng-model-options="{ allowInvalid: true }" ng-model="valC" ng-pattern='thePattern' placeholder="Please input value c" ng-keyup="getC()" >
+      <input name="valC" ng-model-options="{ allowInvalid: true , debounce: 1000 }" ng-model="valC" ng-pattern='thePattern' placeholder="Please input value c" ng-keyup="getC()" >
       <div ng-messages="myForm.valC.$error" >
          <div ng-message="pattern" >**** {{myForm.valC.$viewValue}} is not a valid input of C.</div>
       </div>

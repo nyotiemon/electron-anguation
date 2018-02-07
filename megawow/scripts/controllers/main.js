@@ -1,4 +1,6 @@
 'use strict';
+const BrowserWindow = require('electron').remote.BrowserWindow
+const path = require('path')
 
 /* Angular Functions */
 angular.module('equationCalculator2App')
@@ -9,6 +11,22 @@ angular.module('equationCalculator2App')
 
     vm.plotClear = function() {
         d3.selectAll('g > *').remove();
+    };
+
+    vm.newWindow = function(_nodes) {
+      const modalPath = path.join('file://', __dirname, 'views/only-graph.html')
+      let win = new BrowserWindow({ width: 600, height: 600, title: "Graph" })
+      win.on('close', function () { win = null })
+      win.loadURL(modalPath)
+
+      console.log("showing new window");
+      win.show()
+
+      console.log("send nodes if finish load");
+      win.webContents.on('did-finish-load', () => {
+        console.log("sending nodes");
+        win.webContents.send('theNodes', _nodes);
+      });
     };
 
     vm.plotGraph = function (_nodes) {
@@ -106,6 +124,9 @@ angular.module('equationCalculator2App')
           // vm.result = (JSON.stringify(nodes));
           vm.result = vm.valA + '*x^2 + ' + vm.valB + ' *x + ' + vm.valC + ':';
           vm.plotGraph(nodes);
+
+          vm.newWindow(nodes);
+
         } catch(err){
           vm.result = (err.message);
         }

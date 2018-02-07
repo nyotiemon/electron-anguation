@@ -1,0 +1,35 @@
+<style>
+    body {
+        font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+        color: #fff;
+        background-color: #8aba87;
+        text-align: center;
+    }
+    
+    .in-a-box {
+        border: 2px solid gray;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        margin: 15px;
+
+        padding: 25px;
+        width: 400px;
+        height: 400px;
+    }
+    
+    #visualisation-standalone{
+    width: 25em;
+    height: 25em;
+    }
+</style>
+
+<div flex class="in-a-box">
+    <div layout="row" layout-align="center none">
+        <span><svg id="visualisation-standalone" ></svg></span>
+    </div>
+</div>
+    
+<a id="close" href="javascript:window.close()">Close this Window</a>
+
+<script src="../../bower_components/d3/d3.js"></script>
+<script src="../scripts/in-graph.js"></script>
