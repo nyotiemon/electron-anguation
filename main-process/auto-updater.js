@@ -1,5 +1,7 @@
 const autoUpdater = require('electron-updater').autoUpdater
 const Menu = require('electron').Menu
+const dialog = require( 'electron' ).dialog
+
 
 var state = 'checking'
 
@@ -58,6 +60,7 @@ exports.initialize = function () {
 }
 
 exports.updateMenu = function () {
+  console.log(`UpdateMenu. State: ${state}`)
   if (process.mas) return
 
   var menu = Menu.getApplicationMenu()

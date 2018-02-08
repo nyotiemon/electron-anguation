@@ -144,7 +144,7 @@ function addUpdateMenuItems (items, position) {
     visible: false,
     key: 'checkForUpdate',
     click: function () {
-      require('electron').autoUpdater.checkForUpdates()
+      require('electron-updater').autoUpdater.checkForUpdates()
     }
   }, {
     label: 'Restart and Install Update',
@@ -152,7 +152,7 @@ function addUpdateMenuItems (items, position) {
     visible: false,
     key: 'restartToUpdate',
     click: function () {
-      require('electron').autoUpdater.quitAndInstall()
+      require('electron-updater').autoUpdater.quitAndInstall()
     }
   }]
 

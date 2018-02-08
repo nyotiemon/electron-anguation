@@ -1,12 +1,15 @@
 {
   "name": "justwow",
   "productName": "Electron x Angular",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "electron, angular, d3, equation",
   "private": true,
   "main": "main.js",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "build": "build --win",
     "ship": "build --win -p always"
   },
@@ -34,12 +37,17 @@
       "target": "NSIS",
       "icon": "build/icon.ico"
     },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
     "mac": {
-      "category": "nyotie.electron.anguation",
-      "target": [
-        "zip",
-        "dmg"
-      ]
+      "category": "public.app-category.education",
+      "icon": "build/icon.icns",
+      "target": ["zip","dmg"]
+    },
+    "linux":{
+      "target": ["AppImage", "deb"]
     }
   }
 }
