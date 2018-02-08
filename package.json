@@ -1,7 +1,7 @@
 {
   "name": "justwow",
   "productName": "Electron x Angular",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "electron, angular, d3, equation",
   "private": true,
   "main": "main.js",

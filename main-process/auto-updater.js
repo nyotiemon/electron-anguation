@@ -33,8 +33,8 @@ exports.initialize = function () {
     exports.updateMenu()
   })
 
-  autoUpdater.on('download-progress', function () {
-    console.log('downloading-update')
+  autoUpdater.on('download-progress', (event) => {
+    console.log('downloading update : ' + event.percent.toFixed(2) + '%')
     exports.updateMenu()
   })
 
@@ -47,7 +47,6 @@ exports.initialize = function () {
       type: 'info',
       buttons: ['Restart', 'Later'],
       title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
       detail: 'A new version has been downloaded. Restart the application to apply the updates.'
     }
   
